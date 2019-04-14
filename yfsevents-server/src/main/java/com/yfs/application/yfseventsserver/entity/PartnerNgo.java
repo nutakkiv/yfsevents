@@ -1,13 +1,13 @@
 package com.yfs.application.yfseventsserver.entity;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 public class PartnerNgo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String Name;
@@ -20,11 +20,27 @@ public class PartnerNgo {
     private String state;
     private String pincode;
 
+    @Override
+    public String toString() {
+        return "PartnerNgo{" +
+            "id=" + id +
+            ", Name='" + Name + '\'' +
+            ", description='" + description + '\'' +
+            ", branch='" + branch + '\'' +
+            ", registrationNumber='" + registrationNumber + '\'' +
+            ", addressLine1='" + addressLine1 + '\'' +
+            ", addressLine2='" + addressLine2 + '\'' +
+            ", city='" + city + '\'' +
+            ", state='" + state + '\'' +
+            ", pincode='" + pincode + '\'' +
+            ", authorizedPerson=" + authorizedPerson +
+            '}';
+    }
 
-    @OneToMany(mappedBy = "partnerNgo", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<AuthorizedPerson> authorizedPerson;
+    @OneToMany(mappedBy = "partnerNgo", cascade = CascadeType.ALL)
+    private List<AuthorizedPerson> authorizedPerson;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -104,11 +120,11 @@ public class PartnerNgo {
         this.pincode = pincode;
     }
 
-    public Set<AuthorizedPerson> getAuthorizedPerson() {
+    public List<AuthorizedPerson> getAuthorizedPerson() {
         return authorizedPerson;
     }
 
-    public void setAuthorizedPerson(Set<AuthorizedPerson> authorizedPerson) {
+    public void setAuthorizedPerson(List<AuthorizedPerson> authorizedPerson) {
         this.authorizedPerson = authorizedPerson;
     }
 }

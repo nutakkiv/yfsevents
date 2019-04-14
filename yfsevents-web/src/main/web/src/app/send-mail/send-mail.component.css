@@ -1,0 +1,45 @@
+#mainDiv
+{
+  height: 100%;
+  width:70%;
+  margin:auto;
+  background-color: azure;
+  margin-top: 2%;
+  border-radius: 10px;
+}
+
+#heading
+{
+  height: 50px;
+  width: 70%;
+  /*padding-left: 35%;*/
+  /*margin: auto;*/
+  font-size: 25px;
+  margin-top: 25px;   
+  margin-left: 15%;
+   background-color: burlywood;
+   border-radius: 10px;
+}
+#buttonTab
+{
+  padding-left:10%;
+  margin-top: 10px;
+}
+#buttonCancel
+{
+margin-left: 30%;
+}
+#buttonSubmit
+{
+  margin-left: 4%;
+}
+#backButton
+{
+  width:30%;
+  float:left;
+}
+#headingText
+{
+  width:70%;
+  padding-left: 29%;
+}
