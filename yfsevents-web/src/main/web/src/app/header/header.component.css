@@ -1,0 +1,35 @@
+.nav-tabs li a {
+    color: #777;
+  }
+  
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    border: 0;
+    font-size: 15px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+  .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #2b2c29 !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+  .open .dropdown-toggle {
+    color: #fff;
+  }
+  .dropdown-menu li a {
+    color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+    background-color: red !important;
+  }
+  

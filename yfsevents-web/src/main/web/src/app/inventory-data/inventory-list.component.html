@@ -1,0 +1,37 @@
+
+
+  <div class="page-header well text-center well-sm">
+    <h3><strong>Inventory</strong></h3>
+  </div>
+  <div class="container-fluid">
+<div class="row" style="margin-top:20px">
+
+  <div class="col-md-12">
+    <div style="text-align:right">
+      <button type="button" class="btn btn-primary" (click)="router.navigate(['/inventorydata'])">
+        Add Inventory
+      </button>
+    </div>
+  </div>
+</div>
+<div class="row" style="margin-top: 10px">
+
+  
+
+          <div  id="myGrid"  style="height: 115px;">
+  <ag-grid-angular style="height: 100%;"
+      class="ag-theme-balham"
+      [rowData]="rowData" 
+      [columnDefs]="columnDefs"
+      (rowClicked)="onSearch($event)"
+      >
+  </ag-grid-angular>
+  </div>
+
+
+      
+  </div>
+</div>
+  
+
+

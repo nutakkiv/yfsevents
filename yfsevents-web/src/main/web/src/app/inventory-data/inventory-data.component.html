@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="page-header well well-sm">
+    <h3><strong> Inventory Data</strong></h3>
+  </div>
+  <form [formGroup]="inventoryData">
+    <div class="panel panel-info">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="form-group required">
+              <label class="control-label">Item Name</label>
+              <input type="text" formControlName="itemName" class="form-control well well-sm" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="form-group required">
+              <label class="control-label">Event Category</label>
+              <div>
+                <select formControlName="eventCategory" class="form-control well well-sm" required>
+                  <option *ngFor="let evCat of eventCategoryList" [(ngValue)]="evCat.value">{{evCat.value}}</option>
+                </select>          
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="form-group">
+              <label class="control-label">Comments</label>
+              <textarea type="text" formControlName="comments" class="form-control well well-sm"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="text-center">
+    <button class="btn btn-primary btn-sx" (click)="onSubmit()">Save</button>
+  </div>
+  <div class="spinner-border" role="status" *ngIf="loading">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>

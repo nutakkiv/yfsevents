@@ -1,38 +1,34 @@
 package com.yfs.application.yfseventsserver.entity;
 
+import com.yfs.application.yfseventsserver.KeyValuePair;
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Entity
 public class Volunteer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String firstName;
     private String lastName;
-    private String phonePrefix;
     private String phoneNumber;
-    private String alternatePhonePrefix;
     private String alternatePhoneNumber;
     private String email;
-    private String alternateEmail;
     private String locality;
     private String city;
     private String state;
     private String pincode;
+    private String volunteerPreferredTimes;
+    private String occupation;
 
-    @OneToMany(mappedBy = "volunteer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<VolunteerPreferredTime> preferredTimes;
+    @OneToMany(mappedBy = "volunteer", cascade = CascadeType.ALL)
+    private List<VolunteerInterestedArea> interestedAreas;
 
-    @OneToMany(mappedBy = "volunteer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<VolunteerInterestedArea> interstedAreas;
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -56,13 +52,6 @@ public class Volunteer {
         this.lastName = lastName;
     }
 
-    public String getPhonePrefix() {
-        return phonePrefix;
-    }
-
-    public void setPhonePrefix(String phonePrefix) {
-        this.phonePrefix = phonePrefix;
-    }
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -70,14 +59,6 @@ public class Volunteer {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public String getAlternatePhonePrefix() {
-        return alternatePhonePrefix;
-    }
-
-    public void setAlternatePhonePrefix(String alternatePhonePrefix) {
-        this.alternatePhonePrefix = alternatePhonePrefix;
     }
 
     public String getAlternatePhoneNumber() {
@@ -96,13 +77,6 @@ public class Volunteer {
         this.email = email;
     }
 
-    public String getAlternateEmail() {
-        return alternateEmail;
-    }
-
-    public void setAlternateEmail(String alternateEmail) {
-        this.alternateEmail = alternateEmail;
-    }
 
     public String getLocality() {
         return locality;
@@ -137,4 +111,28 @@ public class Volunteer {
     }
 
 
+
+    public String getVolunteerPreferredTimes() {
+        return volunteerPreferredTimes;
+    }
+
+    public void setVolunteerPreferredTimes(String volunteerPreferredTimes) {
+        this.volunteerPreferredTimes = volunteerPreferredTimes;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public List<VolunteerInterestedArea> getInterestedAreas() {
+        return interestedAreas;
+    }
+
+    public void setInterestedAreas(List<VolunteerInterestedArea> interestedAreas) {
+        this.interestedAreas = interestedAreas;
+    }
 }

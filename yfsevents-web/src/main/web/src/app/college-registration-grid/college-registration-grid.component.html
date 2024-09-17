@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="page-header well text-center well-sm">
+    <h3><strong> College Registration</strong></h3>
+  </div>
+  <div class="row" style="margin-top:10px">
+
+    <div class="col-md-12">
+      <div style="text-align:right">
+        <button type="button" class="btn btn-primary" (click)="router.navigate(['/collegeregistration'])">
+          Add College
+        </button>
+      </div>
+    </div>
+  </div>
+  <div  #myGrid  style="height: 110%;margin-top:10px">
+    <ag-grid-angular style="height: 110%;"
+      class="ag-theme-balham" 
+      [rowData]="data" 
+      [columnDefs]="headers"
+      (rowClicked)="onRowCilcked($event)">
+    </ag-grid-angular>
+  </div>
+
+</div>

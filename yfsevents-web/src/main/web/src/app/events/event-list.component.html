@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row ">
+      <div class="col-md-12 page-header well text-center well-sm">
+      <h3><strong> Events </strong></h3>
+      </div>
+    </div>
+
+<div class="row" style="margin-top:10px">
+
+  <div class="col-md-12">
+    <div style="text-align:right">
+      <button type="button" class="btn btn-primary" (click)="router.navigate(['/addevent'])">
+        Add Event
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 20px">
+
+
+<div>
+<div id="myGrid"  style="height: 110%;">
+    <ag-grid-angular style="height: 110%;"
+        class="ag-theme-balham"
+        [rowData]="rowData" 
+        [columnDefs]="columnDefs"
+        [frameworkComponents]="frameworkComponents">
+    </ag-grid-angular>
+</div>
+
+</div>
+
+
+</div>
+</div>
+

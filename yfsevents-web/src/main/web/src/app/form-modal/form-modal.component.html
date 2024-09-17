@@ -1,0 +1,21 @@
+<div >
+
+  </div>
+  <div class="container-fluid">
+      <div class="page-header well text-center well-sm">
+        <h3><strong> Volunteers who have accepted the invitation </strong></h3>
+      </div>
+      <div  #myGrid  style="width: 100%; height: 110%;">
+        <ag-grid-angular style="height: 100%;"
+          class="ag-theme-balham"
+          [rowData]="data"
+          [columnDefs]="headers"
+          (rowClicked)="onRowCilcked($event)"
+          (gridReady)="onGridReady($event)"
+          [rowSelection]="rowSelection"
+          [gridOptions]="gridOptions"
+          >
+        </ag-grid-angular>
+      </div>
+
+  </div>

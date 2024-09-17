@@ -1,0 +1,17 @@
+
+:host >>> .alert-md-local {
+    background-color: #009688;
+    border-color: #00695C;
+    color: #fff;
+    margin-bottom:0px;
+    margin-top: 20px;
+}
+
+.itemsrow{
+    margin-bottom:0px !important;
+}
+
+.form-group.required .control-label:after{
+    content:"*";
+    color: red;
+}
